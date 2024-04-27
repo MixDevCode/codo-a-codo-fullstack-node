@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insutech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <section id="header">
+        <div class="container-fluid">
+            <!-- Centered nav only -->
+            <div class="justify-content-md-center text-center p-3 align-items-center">
+                <img src="assets/img/logo.png" alt="Insutech" width="200">
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                aria-expanded="false">Dropdown</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section class="container" id="carousel">
+        <!-- Carousel -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/banners/banner1.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/banners/banner2.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/banners/banner3.webp" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="items" class="container mt-5">
+        <!-- Title with a divisor -->
+        <div class="row">
+            <div class="col-12 border-bottom">
+                <h3>Últimos articulos</h3>
+            </div>
+        </div>
+
+        <!-- Items -->
+        <div class="row">
+            <div id="carouselExampleAutoplaying" class="carousel slide mt-3">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-3 mb-3">
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <div class="card w-100 text-center">
+                                        <img src="https://xt-pc.com.ar/img/productos/3/VGA2517.jpg" class="card-img-top"
+                                            height="200" style="object-fit: contain" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">GEFORCE RTX 4090 24GB MSI GAMING TRIO</h5>
+                                            <a href="#" class="btn btn-secondary">$ 2.381.040,01</a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 mb-3 ms-3">
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <div class="card w-100 text-center">
+                                        <img src="https://s3-sa-east-1.amazonaws.com/saasargentina/oK7aY8vvQjs5Kvm9qcTG/miniatura"
+                                            class="card-img-top" alt="..." height="200" style="object-fit: contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title">MOUSE LOGITECH M90 USB GRIS OSCURO</h5>
+                                            <a href="#" class="btn btn-secondary">$ 5.150,00</a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 mb-3 ms-3">
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <div class="card w-100 text-center">
+                                        <img src="https://tryhardware.com.ar/wp-content/uploads/2023/08/Teclado-Logitech-K120-Negro-1.webp"
+                                            class="card-img-top" alt="..." height="200" style="object-fit: contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title">TECLADO LOGITECH USB K120</h5>
+                                            <a href="#" class="btn btn-secondary">$ 10.200,00</a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-3 mb-3 ms-3">
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <div class="card w-100 text-center">
+                                        <img src="https://static.nb.com.ar/i/nb_FUENTE-GAMER-GIGABYTE-450W-80-PLUS_ver_dde791a4abc70e742caebd4cf746d3d2.jpeg"
+                                            class="card-img-top" alt="..." height="200" style="object-fit: contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title">FUENTE GAMER GIGABYTE 450W 80 PLUS</h5>
+                                            <a href="#" class="btn btn-secondary">$ 63.671,00</a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 mb-3 ms-3">
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <div class="card w-100 text-center">
+                                        <img src="https://spacegamer.com.ar/img/Public/1058-producto-1585842748-monitor-22-led-asus-vp228he-cf-fhd-1ms-75hz-6272.jpg"
+                                            class="card-img-top" alt="..." height="200" style="object-fit: contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title">MONITOR ASUS VP228HE 22" FULL HD 1MS TN</h5>
+                                            <button class="btn btn-secondary">$ 112.770,00</button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 mb-3 ms-3">
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <div class="card w-100 text-center">
+                                        <img src="https://www.qloud.ar/SITES/IMG/m-y-m-computacion-06-2020/0000000000004719072932237.jpg"
+                                            class="card-img-top" alt="..." height="200" style="object-fit: contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title">GABINETE GAMER MSI MAG FORGE M100A</h5>
+                                            <a href="#" class="btn btn-secondary">$ 62.730,00</a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="marcas" class="container mt-5">
+        <div class="logos">
+            <div class="logo_items">
+                <img src="assets/img/marcas/1.png">
+                <img src="assets/img/marcas/2.jpg">
+                <img src="assets/img/marcas/3.jpg">
+                <img src="assets/img/marcas/4.jpg">
+                <img src="assets/img/marcas/5.jpg">
+                <img src="assets/img/marcas/6.jpg">
+                <img src="assets/img/marcas/7.jpg">
+                <img src="assets/img/marcas/8.jpg">
+                <img src="assets/img/marcas/9.jpg">
+                <img src="assets/img/marcas/10.jpg">
+                <img src="assets/img/marcas/11.jpg">
+                <img src="assets/img/marcas/12.jpg">
+                <img src="assets/img/marcas/13.jpg">
+                <img src="assets/img/marcas/14.jpg">
+                <img src="assets/img/marcas/15.jpg">
+                <img src="assets/img/marcas/16.jpg">
+                <img src="assets/img/marcas/17.jpg">
+            </div>
+            <div class="logo_items">
+                <img src="assets/img/marcas/1.png">
+                <img src="assets/img/marcas/2.jpg">
+                <img src="assets/img/marcas/3.jpg">
+                <img src="assets/img/marcas/4.jpg">
+                <img src="assets/img/marcas/5.jpg">
+                <img src="assets/img/marcas/6.jpg">
+                <img src="assets/img/marcas/7.jpg">
+                <img src="assets/img/marcas/8.jpg">
+                <img src="assets/img/marcas/9.jpg">
+                <img src="assets/img/marcas/10.jpg">
+                <img src="assets/img/marcas/11.jpg">
+                <img src="assets/img/marcas/12.jpg">
+                <img src="assets/img/marcas/13.jpg">
+                <img src="assets/img/marcas/14.jpg">
+                <img src="assets/img/marcas/15.jpg">
+                <img src="assets/img/marcas/16.jpg">
+                <img src="assets/img/marcas/17.jpg">
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <footer class="py-3 mt-4 bg-light">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+          </footer>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
