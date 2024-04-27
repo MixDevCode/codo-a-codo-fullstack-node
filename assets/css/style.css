@@ -6,6 +6,49 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 991px) {
+    .navbar-collapse.collapse:not(.show) {
+        display: block;
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #fff;
+        width: 215px;
+        height: 100%;
+        z-index: 9999;
+        padding: 25px;
+        transform: translateX(-215px);
+        display: block;
+    }
+
+    .navbar-collapse.show {
+        transform: translateX(0px);
+    }
+
+    .nav-overlay {
+        position: absolute;
+        background: #0000007d;
+        width: 100vw;
+        min-height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 6;
+        transform: translateX(-100vw);
+        display: block;
+    }
+
+    .nav-overlay.active {
+        transform: translateX(0) translateY(8px);
+    }
+}
+
 @keyframes slides {
     from {
         transform: translateX(0);
