@@ -10,6 +10,13 @@
     overflow: hidden;
 }
 
+@media screen and (max-width: 500px) {
+    .logos:before,
+    .logos:after {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 991px) {
     .navbar-collapse.collapse:not(.show) {
         display: block;
