@@ -10,7 +10,7 @@
     overflow: hidden;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
     .logos:before,
     .logos:after {
         display: none;
