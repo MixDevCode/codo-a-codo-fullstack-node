@@ -1,5 +1,8 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Logo */
@@ -156,16 +159,120 @@ body {
     }
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
 /* Footer */
 footer {
-    display: block;
-    left: 0;
-    bottom: 0;
+    margin-top: auto;
     max-width: 100%;
     background-color: #f8f9fa;
     text-align: center;
     padding: 10px;
+
 }
+
+/* Product page */
+/* Columns */
+.left-column {
+    width: 50%;
+    position: relative;
+  }
+   
+.right-column {
+width: 50%;
+margin-top: 60px;
+}
+
+  /* Left Column */
+.left-column img {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+   
+  .left-column img.active {
+    opacity: 1;
+  }
+
+/* Rreponsive img */
+@media (max-width: 800px) {
+    .left-column img {
+        width: 100%;
+        opacity: 1;
+    }
+    .row {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .right-column {
+        width: 100%;
+    }
+    .left-column {
+        width: 100%;
+    }
+}
+
+  /* Product Description */
+.product-description {
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 20px;
+  }
+  .product-description span {
+    font-size: 12px;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .product-description h1 {
+    font-weight: 300;
+    font-size: 52px;
+    color: #43484D;
+    letter-spacing: -2px;
+  }
+  .product-description p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #86939E;
+    line-height: 24px;
+  }
+
+/* Product Price */
+.product-price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+   
+  .product-price span {
+    font-size: 26px;
+    font-weight: 300;
+    color: #43474D;
+    margin-right: 20px;
+  }
+   
+  .cart-btn {
+    display: inline-block;
+    background-color: #1b6cc0;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 30px;
+    transition: all .5s;
+  }
+  .cart-btn:hover {
+    background-color: #11487e;
+  }
 
 /* Logos */
 
