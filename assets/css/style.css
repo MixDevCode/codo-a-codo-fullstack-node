@@ -17,23 +17,23 @@ body {
     overflow: hidden;
     text-align: center;
     padding: 14px 16px;
-  }
-  
-  .navbar a {
+}
+
+.navbar a {
     color: #000000a6;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
+}
 
-  .navbar a:hover {
+.navbar a:hover {
     color: black
-  }
+}
 
-  .navbar a.active {
+.navbar a.active {
     color: black
-  }
+}
 
 /* Utilities */
 .responsive-image {
@@ -43,7 +43,6 @@ body {
 
 .center-container {
     text-align: center;
-    margin: 0 auto;
     left: 0;
     right: 0;
 }
@@ -55,7 +54,9 @@ body {
     grid-gap: 20px;
     padding: 20px;
     gap: 20px;
+    text-align: center;
 }
+
 .card-list .card-item {
     background: #fff;
     padding: 26px;
@@ -67,9 +68,11 @@ body {
     border: 2px solid transparent;
     transition: border 0.5s ease;
 }
+
 .card-list .card-item:hover {
     border: 2px solid #000;
 }
+
 .card-list .card-item .prod-img {
     width: 40%;
     border-radius: 8px;
@@ -100,21 +103,44 @@ body {
 }
 
 
-/* Titles */
-.framed-title {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
 }
 
-.framed-title::after {
-    content: "";
-    position: absolute;
-    left: 10%; 
-    bottom: 0;
-    width: 80%;
-    height: 2px;
-    background-color: black;
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 1400px;
+    }
+}
+
+/* Titles */
+.framed-title {
+    /*To the left */
+    text-align: left;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
 }
 
 
@@ -123,6 +149,7 @@ body {
         padding: 15px;
     }
 }
+
 @media screen and (max-width: 980px) {
     .card-list {
         margin: 0 auto;
@@ -131,18 +158,19 @@ body {
 
 /* Footer */
 footer {
-  display: block;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #f8f9fa;
-  text-align: center;
-  padding: 10px;
+    display: block;
+    left: 0;
+    bottom: 0;
+    max-width: 100%;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px;
 }
 
 /* Logos */
 
 @media screen and (max-width: 720px) {
+
     .logos:before,
     .logos:after {
         display: none;
