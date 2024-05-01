@@ -55,11 +55,19 @@
                         <span class="price">$ 29.694</span>
                     </a></swiper-slide>
                     <swiper-slide><a href="producto.html" class="card-item">
-                        <img src="https://www.armytech.com.ar/Image/0/450_450-1200_1200-Proyecto_nuevo.jpg" alt="Card Image"
-                        >
-                        <h3>Monitor Samsung LED 22" T350H IPS</h3>
-                        <span class="price">$ 161.993</span>
+                        <img src="https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/SA400S37-240G.jpg"
+                            alt="Card Image">
+                        <h3>Disco Sólido SSD 240GB Kingston</h3>
+                        <span class="price">$ 29.694</span>
                     </a></swiper-slide>
+                    <swiper-slide>
+                        <a href="producto.html" class="card-item">
+                            <img src="https://www.armytech.com.ar/Image/0/450_450-1200_1200-Proyecto_nuevo.jpg" alt="Card Image"
+                            >
+                            <h3>Monitor Samsung LED 22" T350H IPS</h3>
+                            <span class="price">$ 161.993</span>
+                        </a>
+                    </swiper-slide>
                     <swiper-slide> <a href="producto.html" class="card-item">
                         <img src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
                             alt="Card Image">
@@ -127,6 +135,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Banner
             var splide = new Splide('.splide', {
                 type    : 'loop',
                 perPage : 1,
@@ -135,6 +144,7 @@
             });
             splide.mount();
 
+            // Productos
             const swiperEl = document.querySelector('swiper-container')
             Object.assign(swiperEl, {
                 breakpoints: {
