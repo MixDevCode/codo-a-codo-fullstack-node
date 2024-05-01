@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Insutech</title>
+    <!-- Sliders -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -20,29 +24,59 @@
         </div>
     </section>
     <section id="home">
-            <div class="container center-container">
-                <img src="assets/img/banners/banner3.webp" alt="..." class="responsive-image">
+        <div class="container center-container">
+            <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide" data-splide-interval="5000"><img src="assets/img/banners/banner3.webp" alt="..."
+                                class="responsive-image"></li>
+                        <li class="splide__slide" data-splide-interval="5000"><img src="assets/img/banners/banner2.webp" alt="..."
+                                class="responsive-image"></li>
+                        <li class="splide__slide" data-splide-interval="5000"><img src="assets/img/banners/banner1.webp" alt="..."
+                                class="responsive-image"></li>
+                    </ul>
+                </div>
+                <div class="splide__progress">
+                    <div class="splide__progress__bar">
+                    </div>
+              </div>
             </div>
-            <div class="container">
-                <h1 class="framed-title">Ultimos productos</h1>
-                <hr>
-                <div class="card-list">
-                    <a href="producto.html" class="card-item">
-                        <img src="https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/SA400S37-240G.jpg" alt="Card Image" class="prod-img">
+        </div>
+        <div class="container">
+            <h1 class="framed-title">Ultimos productos</h1>
+            <hr>
+            <div class="card-list">
+                <swiper-container class="mySwiper" space-between="30"
+                    slides-per-view="3" autoplay-delay="4000" autoplay-disable-on-interaction="false" loop="true" init="false">
+                    <swiper-slide><a href="producto.html" class="card-item">
+                        <img src="https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/SA400S37-240G.jpg"
+                            alt="Card Image">
                         <h3>Disco Sólido SSD 240GB Kingston A400</h3>
                         <span class="price">$ 29.694</span>
-                    </a>
-                    <a href="producto.html" class="card-item">
-                        <img src="https://www.armytech.com.ar/Image/0/450_450-1200_1200-Proyecto_nuevo.jpg" alt="Card Image" class="prod-img">
+                    </a></swiper-slide>
+                    <swiper-slide><a href="producto.html" class="card-item">
+                        <img src="https://www.armytech.com.ar/Image/0/450_450-1200_1200-Proyecto_nuevo.jpg" alt="Card Image"
+                        >
                         <h3>Monitor Samsung LED 22" T350H IPS</h3>
                         <span class="price">$ 161.993</span>
-                    </a>
-                    <a href="producto.html" class="card-item">
-                        <img src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg" alt="Card Image" class="prod-img">
+                    </a></swiper-slide>
+                    <swiper-slide> <a href="producto.html" class="card-item">
+                        <img src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
+                            alt="Card Image">
                         <h3>Mouse Logitech G203 Gaming LIGHTSYNC</h3>
                         <span class="price">$ 28.560</span>
-                    </a>
-                </div>
+                    </a></swiper-slide>
+                    <swiper-slide><a href="producto.html" class="card-item">
+                        <img src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
+                            alt="Card Image">
+                        <h3>Mouse Logitech G203 Gaming LIGHTSYNC</h3>
+                        <span class="price">$ 28.560</span>
+                    </a></swiper-slide>
+                </swiper-container>
+                
+                
+               
+                
             </div>
         </div>
     </section>
@@ -92,6 +126,39 @@
     <footer>
         <p>© 2024 Insutech</p>
     </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var splide = new Splide('.splide', {
+                type    : 'loop',
+                perPage : 1,
+                autoplay: true,
+                arrows: false
+            });
+            splide.mount();
+
+            const swiperEl = document.querySelector('swiper-container')
+            Object.assign(swiperEl, {
+                breakpoints: {
+                    320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    },
+                    640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    },
+                    1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                    },
+                },
+                });
+            swiperEl.initialize();
+        });
+    </script>
 </body>
 
 </html>
