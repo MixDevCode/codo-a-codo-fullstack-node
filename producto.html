@@ -43,10 +43,26 @@
     <div class="container row">
       <div class="left-column">
         <img
-          class="active"
-          src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
+          class="active slider"
+          src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-1.png?v=1"
           alt=""
         />
+        <img
+          class="active slider"
+          src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-2.png?v=1"
+          alt=""
+        />
+        <img
+          class="active slider"
+          src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-3.png?v=1"
+          alt=""
+        />
+        <button class="slider-button display-left" onclick="plusDivs(-1)">
+          &#10094;
+        </button>
+        <button class="slider-button display-right" onclick="plusDivs(+1)">
+          &#10095;
+        </button>
       </div>
 
       <div class="right-column">
@@ -67,8 +83,9 @@
         </div>
       </div>
     </div>
-    <h3>Caracteristicas del producto</h3>
+
     <div class="tables-container">
+      <h3>Caracteristicas del producto</h3>
       <table>
         <caption>
           <b>Dimensiones</b>
@@ -107,7 +124,7 @@
           </tr>
           <tr>
             <th>Botones</th>
-            <td>6 programables</td>
+            <td>6 - programables</td>
           </tr>
           <tr>
             <th>Resolución</th>
@@ -121,5 +138,28 @@
       <p>© 2024 Insutech</p>
     </footer>
     <script src="assets/js/main.js"></script>
+    <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs((slideIndex += n));
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("slider");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+      }
+    </script>
   </body>
 </html>
