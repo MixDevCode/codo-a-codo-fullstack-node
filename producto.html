@@ -1,60 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Insutech</title>
     <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <section id="header">
-        <div class="navbar-brand">
-            <img src="assets/img/logo.png" alt="Insutech" width="200">
-        </div>
-        <div class="topnav" id="myTopnav">
-            <a href="index.html">Inicio</a>
-            <a href="productos.html" class="active">Productos</a>
-            <a href="contacto.html">Contacto</a>
-            <div class="dropdown">
-              <button class="dropbtn">
-                <i class="fas fa-dollar-sign"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#" onclick="setPrice('peso')">Pesos<span><i class="fas fa-check hidden" id="peso"></i></span></a>
-                <a href="#" onclick="setPrice('dolar')">Dólares<span><i class="fas fa-check hidden" id="dolar"></i></span></a>
-              </div>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="mostrarNav()">&#9776;</a>
+      <div class="navbar-brand">
+        <img src="assets/img/logo.png" alt="Insutech" width="200" />
+      </div>
+      <div class="topnav" id="myTopnav">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="active">Productos</a>
+        <a href="contacto.html">Contacto</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            <i class="fas fa-dollar-sign"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" onclick="setPrice('peso')"
+              >Pesos<span><i class="fas fa-check hidden" id="peso"></i></span
+            ></a>
+            <a href="#" onclick="setPrice('dolar')"
+              >Dólares<span><i class="fas fa-check hidden" id="dolar"></i></span
+            ></a>
           </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="mostrarNav()"
+          >&#9776;</a
+        >
+      </div>
     </section>
     <div class="container row">
-        <div class="left-column">
-            <img class="active" src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg" alt="">
+      <div class="left-column">
+        <img
+          class="active slider"
+          src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-1.png?v=1"
+          alt=""
+        />
+        <img
+          class="active slider"
+          src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-2.png?v=1"
+          alt=""
+        />
+        <img
+          class="active slider"
+          src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-3.png?v=1"
+          alt=""
+        />
+        <button class="slider-button display-left" onclick="plusDivs(-1)">
+          &#10094;
+        </button>
+        <button class="slider-button display-right" onclick="plusDivs(+1)">
+          &#10095;
+        </button>
+      </div>
+
+      <div class="right-column">
+        <div class="product-description">
+          <span>Perifericos</span>
+          <h1>Mouse Logitech G203 Gaming LIGHTSYNC</h1>
+          <p>
+            Aprovecha al máximo tu tiempo de juego con el G203, un mouse para
+            juegos disponible en una variedad de vibrantes colores. Con la
+            tecnología LIGHTSYNC, un sensor para juegos y un diseño clásico de 6
+            botones, animarás tu acción y tu espacio.
+          </p>
         </div>
 
-        <div class="right-column">
-            <div class="product-description">
-                <span>Perifericos</span>
-                <h1>Mouse Logitech G203 Gaming LIGHTSYNC</h1>
-                <p>Aprovecha al máximo tu tiempo de juego con el G203, un mouse para juegos disponible en una variedad de vibrantes colores. Con la tecnología LIGHTSYNC, un sensor para juegos y un diseño clásico de 6 botones, animarás tu acción y tu espacio.</p>
-            </div>
-
-            <div class="product-price">
-                <span>$ 28.560</span>
-                <a href="#" class="cart-btn">Agregar al Carrito</a>
-            </div>
+        <div class="product-price">
+          <span>$ 28.560</span>
+          <a href="#" class="cart-btn">Agregar al Carrito</a>
         </div>
+      </div>
     </div>
-    <br>
+
+    <div class="tables-container">
+      <h3>Caracteristicas del producto</h3>
+      <table>
+        <caption>
+          <b>Dimensiones</b>
+        </caption>
+        <tbody>
+          <tr>
+            <th>Altura</th>
+            <td>116,6 mm</td>
+          </tr>
+          <tr>
+            <th>Ancho</th>
+            <td>62,15 mm</td>
+          </tr>
+          <tr>
+            <th>Profundidad</th>
+            <td>38,2 mm</td>
+          </tr>
+          <tr>
+            <th>Peso</th>
+            <td>85 g (sólo mouse)</td>
+          </tr>
+          <tr>
+            <th>Longitud del cable</th>
+            <td>2,1 m</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <caption>
+          <b>Especificaciones técnicas</b>
+        </caption>
+        <tbody>
+          <tr>
+            <th>Iluminación</th>
+            <td>RGB LIGHTSYNC</td>
+          </tr>
+          <tr>
+            <th>Botones</th>
+            <td>6 - programables</td>
+          </tr>
+          <tr>
+            <th>Resolución</th>
+            <td>200 - 8000 dpi</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <footer>
-        <p>© 2024 Insutech</p>
+      <p>© 2024 Insutech</p>
     </footer>
     <script src="assets/js/main.js"></script>
-</body>
+    <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
 
+      function plusDivs(n) {
+        showDivs((slideIndex += n));
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("slider");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+      }
+    </script>
+  </body>
 </html>
