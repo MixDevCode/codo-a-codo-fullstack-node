@@ -579,10 +579,17 @@ div.loading {
   background-color: #11487e;
 }
 
-.element {
-  display: table-cell;
+.tables-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.tables-container > table {
+  width: 30%;
   text-align: left;
   padding: 15px 24px 15px 16px;
+  margin-right: 2%;
 }
 /* Brands */
 
