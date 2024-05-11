@@ -526,6 +526,10 @@ div.loading {
 }
 
 /* Product */
+.splide__slide img {
+  opacity: 1;
+}
+
 .product-description {
   border-bottom: 1px solid #e1e8ee;
   margin-bottom: 20px;
