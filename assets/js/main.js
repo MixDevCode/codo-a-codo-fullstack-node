@@ -46,6 +46,10 @@ function setPrice() {
     tippy(price, {
       content: `Precio Dólar: $${total}`,
     });
+    
+    price.onclick = function(event) {
+      event.preventDefault();
+    };
   });
 }
 
