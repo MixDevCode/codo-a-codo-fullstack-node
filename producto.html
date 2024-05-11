@@ -11,6 +11,10 @@
     />
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -22,19 +26,6 @@
         <a href="index.html">Inicio</a>
         <a href="productos.html" class="active">Productos</a>
         <a href="contacto.html">Contacto</a>
-        <div class="dropdown">
-          <button class="dropbtn">
-            <i class="fas fa-dollar-sign"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="#" onclick="setPrice('peso')"
-              >Pesos<span><i class="fas fa-check hidden" id="peso"></i></span
-            ></a>
-            <a href="#" onclick="setPrice('dolar')"
-              >Dólares<span><i class="fas fa-check hidden" id="dolar"></i></span
-            ></a>
-          </div>
-        </div>
         <a href="javascript:void(0);" class="icon" onclick="mostrarNav()"
           >&#9776;</a
         >
@@ -42,29 +33,34 @@
     </section>
     <div class="container row">
       <div class="left-column">
-        <img
-          class="active slider"
-          src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-1.png?v=1"
-          alt=""
-        />
-        <img
-          class="active slider"
-          src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-2.png?v=1"
-          alt=""
-        />
-        <img
-          class="active slider"
-          src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-3.png?v=1"
-          alt=""
-        />
-        <button class="slider-button display-left" onclick="plusDivs(-1)">
-          &#10094;
-        </button>
-        <button class="slider-button display-right" onclick="plusDivs(+1)">
-          &#10095;
-        </button>
+        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide" data-splide-interval="5000">
+                <img
+                  src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-1.png?v=1"
+                  alt="..."
+                  class="responsive-image"
+                />
+              </li>
+              <li class="splide__slide" data-splide-interval="5000">
+                <img
+                  src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-2.png?v=1"
+                  alt="..."
+                  class="responsive-image"
+                />
+              </li>
+              <li class="splide__slide" data-splide-interval="5000">
+                <img
+                  src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-white-gallery-3.png?v=1"
+                  alt="..."
+                  class="responsive-image"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-
       <div class="right-column">
         <div class="product-description">
           <span>Perifericos</span>
@@ -78,7 +74,7 @@
         </div>
 
         <div class="product-price">
-          <span>$ 28.560</span>
+          <span class="price">$ 28.560</span>
           <a href="#" class="cart-btn">Agregar al Carrito</a>
         </div>
       </div>
@@ -138,28 +134,19 @@
       <p>© 2024 Insutech</p>
     </footer>
     <script src="assets/js/main.js"></script>
-    <script>
-      var slideIndex = 1;
-      showDivs(slideIndex);
-
-      function plusDivs(n) {
-        showDivs((slideIndex += n));
-      }
-
-      function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("slider");
-        if (n > x.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = x.length;
-        }
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        x[slideIndex - 1].style.display = "block";
-      }
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script type="text/javascript">
+      var splide = new Splide(".splide", {
+        type: "loop",
+        perPage: 1,
+        autoplay: false,
+        arrows: false,
+        pagination: false,
+      });
+      splide.mount();
+      setPrice();
     </script>
   </body>
 </html>
