@@ -1,60 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Insutech</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <section id="header">
-        <div class="navbar-brand">
-            <img src="assets/img/logo.png" alt="Insutech" width="200">
-        </div>
-        <div class="topnav" id="myTopnav">
-            <a href="index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="contacto.html" class="active">Contacto</a>
-            <div class="dropdown">
-              <button class="dropbtn">
-                <i class="fas fa-dollar-sign"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#" onclick="setPrice('peso')">Pesos<span><i class="fas fa-check hidden" id="peso"></i></span></a>
-                <a href="#" onclick="setPrice('dolar')">Dólares<span><i class="fas fa-check hidden" id="dolar"></i></span></a>
-              </div>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="mostrarNav()">&#9776;</a>
-          </div>
+      <div class="navbar-brand">
+        <img src="assets/img/logo.png" alt="Insutech" width="200" />
+      </div>
+      <div class="topnav" id="myTopnav">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html" class="active">Contacto</a>
+        <a href="javascript:void(0);" class="icon" onclick="mostrarNav()"
+          >&#9776;</a
+        >
+      </div>
     </section>
     <div class="container row">
-        <div class="left-column">
-            <!-- Iframe -->
-            <p style="font-size: 16px;">Hola, aca esta nuestro iframe con la direccion de nuestra tienda fisica oficial! Venga a visitarnos!!!</p>
-            <div style="width: 100%"><iframe width="80%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Av.%20Dr.%20Honorio%20Pueyrred%C3%B3n%201841,%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires,%20Argentina+(Insutech)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps tracker sport</a></iframe></div>
-            <!-- Iconos con redes sociales y telefono -->
-            <i class="fa-solid fa-phone"></i>
-        </div>
+      <div class="left-column">
+        <!-- Iframe -->
+        <iframe
+          class="map"
+          height="500"
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+          src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Av.%20Dr.%20Honorio%20Pueyrred%C3%B3n%201841,%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires,%20Argentina+(Insutech)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          ><a href="https://www.gps.ie/">gps tracker sport</a></iframe
+        ><br />
+        <!-- Iconos con redes sociales y telefono -->
+      </div>
 
-        <div class="right-column">
-            <!-- Formulario -->
-            <form action="" method="post">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="user_name">
-                <label for="email">Email</label>
-                <input type="email" id="mail" name="user_email">
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
+      <div class="right-column">
+        <!-- Formulario -->
+        <form action="" method="post">
+          <fieldset>
+            <label for="user_name">Nombre</label>
+            <input type="text" id="name" name="user_name" />
+            <label for="user_email">Email</label>
+            <input type="email" id="mail" name="user_email" required /> <br />
+            <label for="contact_type">Tipo de consulta</label>
+            <select name="contact_type" id="contact_type" required>
+              <option value="" selected disabled>Elige una...</option>
+              <option value="Comercial">Comercial</option>
+              <option value="Tecnica">Tecnica</option>
+              <option value="Otra">Otra</option></select
+            ><br />
+            <label for="consulta">Consulta</label><br />
+            <textarea
+              name="consulta"
+              id="consulta"
+              rows="5"
+              cols="50"
+              maxlength="300"
+            ></textarea
+            ><br /><span id="contadorCaracteres"></span><br />
+            <button type="submit">Enviar</button>
+          </fieldset>
+        </form>
+      </div>
     </div>
-    <br>
+    <br />
     <footer>
-        <p>© 2024 Insutech</p>
+      <p>© 2024 Insutech</p>
     </footer>
     <script src="assets/js/main.js"></script>
-</body>
+    <!--Contador de caracteres-->
+    <script>
+      function mostrarCaracteres(textareaElement, contadorElement) {
+        contadorElement.innerText = textareaElement.value.length + "/500";
+      }
 
+      document.addEventListener("DOMContentLoaded", function () {
+        let contadorCaracteres = document.getElementById("contadorCaracteres");
+        let textareaElement = document.getElementById("consulta");
+
+        mostrarCaracteres(textareaElement, contadorCaracteres);
+        textareaElement.addEventListener("input", function () {
+          mostrarCaracteres(textareaElement, contadorCaracteres);
+        });
+      });
+    </script>
+  </body>
 </html>
