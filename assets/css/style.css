@@ -267,6 +267,11 @@ body {
   }
 }
 
+
+.contenido-contacto {
+  width: 80%;
+  margin: auto;
+}
 /* Titles */
 .framed-title {
   text-align: left;
@@ -276,13 +281,17 @@ body {
   color: #000;
 }
 
+/* Map */
+.map {
+  width: 100%;
+}
+
 /* Icons */
-.iconos{
+.iconos {
   font-size: 2rem;
   display: flex;
   justify-content: space-between;
-  width: 80%;
-  margin-top: 1rem;
+  width: 150px;
 }
 
 .iconos a {
@@ -305,6 +314,16 @@ footer {
   width: 50%;
   position: relative;
   align-content: center;
+}
+
+.left-contact-column {
+  width: 50%;
+  position: relative;
+  left: 0;
+}
+
+.right-contact-column {
+  width: 50%;
 }
 
 .right-column {
@@ -345,7 +364,15 @@ footer {
     width: 100%;
   }
 
+  .right-contact-column {
+    width: 100%;
+  }
+
   .left-column {
+    width: 100%;
+  }
+
+  .left-contact-column {
     width: 100%;
   }
 }
@@ -747,8 +774,8 @@ swiper-slide img {
 h1 {
   color: #333;
   text-align: center;
-  margin-top: 20px; /* Agregamos un poco de espacio superior */
-  margin-bottom: 20px; /* Agregamos un poco de espacio inferior */
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 form {
@@ -757,17 +784,25 @@ form {
   padding: 20px;
   border: 1px solid #a7def8;
   border-radius: 10px;
-  background-color: #f9f9f9; /* Cambiamos el color de fondo */
+  background-color: #f9f9f9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+input:not([type="radio"]) {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #7495c5;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
 .formulario {
-  margin-bottom: 20px; /* Aumentamos el espacio entre elementos del formulario */
+  margin-bottom: 20px;
 }
 
 .formulario label {
   display: block;
-  margin-bottom: 5px; /* Reducimos el espacio inferior entre etiquetas */
+  margin-bottom: 5px;
   font-weight: bold;
 }
 
@@ -784,12 +819,18 @@ button {
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
-  background-color: #5cc56e;
-  color: #ffffff; /* Cambiamos el color del texto a blanco */
+  background-color: #1e6cbc;
+  color: #ffffff;
   font-size: 16px;
   cursor: pointer;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
 }

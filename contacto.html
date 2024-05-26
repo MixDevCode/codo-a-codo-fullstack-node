@@ -10,45 +10,39 @@
 </head>
 
 <body>
-    <section id="header">
-        <div class="navbar-brand">
-            <img src="assets/img/logo.png" alt="Insutech" width="200">
-        </div>
-        <div class="topnav" id="myTopnav">
-            <a href="index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="contacto.html" class="active">Contacto</a>
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <i class="fas fa-dollar-sign"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="setPrice('peso')">Pesos<span><i class="fas fa-check hidden"
-                                id="peso"></i></span></a>
-                    <a href="#" onclick="setPrice('dolar')">Dólares<span><i class="fas fa-check hidden"
-                                id="dolar"></i></span></a>
-                </div>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="mostrarNav()">&#9776;</a>
-        </div>
+  <section id="header">
+    <div class="navbar-brand">
+      <img src="assets/img/logo.png" alt="Insutech" width="200" />
+    </div>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html" class="active">Contacto</a>
+      <a href="javascript:void(0);" class="icon" onclick="mostrarNav()"
+        >&#9776;</a
+      >
+    </div>
     </section>
     <div class="container row">
-        <div class="left-column">
+        <div class="left-contact-column">
+          <div class="contenido-contacto">
             <!-- Iframe -->
-            <p style="font-size: 16px;">Hola, aca esta nuestro iframe con la direccion de nuestra tienda fisica oficial!
-                Venga a visitarnos!!!</p>
-            <div style="width: 100%"><iframe width="80%" height="500" frameborder="0" scrolling="no" marginheight="0"
-                    marginwidth="0"
-                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Av.%20Dr.%20Honorio%20Pueyrred%C3%B3n%201841,%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires,%20Argentina+(Insutech)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
-                        href="https://www.gps.ie/">gps tracker sport</a></iframe></div>
+            <h1>Ubicación</h1>
+            <iframe class="map" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Av.%20Dr.%20Honorio%20Pueyrred%C3%B3n%201841,%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires,%20Argentina+(Insutech)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
             <!-- Iconos con redes sociales y telefono -->
-            <i class="fa-solid fa-phone"></i>
+            <div class="iconos">
+              <a target="_blank" href="https://www.instagram.com/" style="color: #E1306C;"><i class="fa-brands fa-square-instagram"></i></a>
+              <a target="_blank" href="https://www.facebook.com/?locale=es_LA" style="color: #4267B2;"><i class="fa-brands fa-square-facebook"></i></a>
+              <a target="_blank" href="https://wa.me/5491100000000?text=Estoy%20interesad@%20en%20comprar%20algo" style="color: #25D366;"><i class="fa-brands fa-square-whatsapp"></i></a>
+              <a target="_blank" href="https://github.com/MixDevCode/codo-a-codo-fullstack-node"><i class="fa-brands fa-square-github"></i></a>
+            </div>
+          </div>
         </div>
 
-        <div class="right-column">
+        <div class="right-contact-column">
             <!-- Formulario -->
-            <h1>Formulario de Venta de Productos</h1>
-            <form action="" method="post" target="_blank">
+            <h1>Formulario de Contacto</h1>
+            <form action="https://formspree.io/f/xvoendwv" method="POST">
                 <fieldset>
                     <legend>Datos Personales</legend>
                     <div class="formulario">
@@ -63,7 +57,7 @@
                     </div>
                     <div class="formulario">
                         <label for="email">Email</label>
-                        <input type="email" id="mail" name="email" size="50" maxlength="60"
+                        <input type="email" id="mail" name="email" maxlength="60"
                             placeholder="Tu correo email..." required>
                     </div>
                     <div class="formulario">
@@ -100,24 +94,28 @@
                         <label for="ciudad">Ciudad</label>
                         <select id="ciudad" name="ciudad" required>
                             <option value="" disabled selected hidden>Selecciona una ciudad...</option>
-                            <!-- Funcion Js -->
                         </select>
                     </div>
+                  </fieldset>
                     <fieldset>
                         <legend>Motivo</legend>
-                        <div class="formulario">
+                        <div class="formulario controls">
                             <div>
+                              <label for="consulta">
                                 <input type="radio" id="Consulta" name="motivo" value="Consulta" required>
-                                <label for="consulta">Consulta</label>
+                                Consulta
+                              </label>
                             </div>
                             <div>
+                              <label for="reclamo">
                                 <input type="radio" id="Reclamo" name="motivo" value="Reclamo" required>
-                                <label for="reclamo">Reclamo</label>
+                                Reclamo
+                              </label>
                             </div>
                         </div>
                         <div class="formulario">
                             <label for="comentario">Comentario</label>
-                            <textarea id="comentario" name="comentario" rows="4" cols="50"
+                            <textarea id="comentario" name="comentario" rows="4" style="resize: none; width: 100%;"
                                 placeholder="Escribe tu comentario aquí..."></textarea>
                         </div>
                         <div class="formulario">
@@ -125,7 +123,7 @@
                             <input type="file" id="imagen" name="imagen" accept="image/png, image/jpeg">
                         </div>
                     </fieldset>
-                </fieldset>
+                <br>
                 <button type="submit">Enviar</button>
             </form>
         </div>

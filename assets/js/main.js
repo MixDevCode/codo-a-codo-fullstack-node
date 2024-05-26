@@ -27,7 +27,9 @@ if (
       );
     });
 } else {
-  loadingOverlay.classList.add("hidden");
+  if(loadingOverlay) {
+    loadingOverlay.classList.add("hidden");
+  }
 }
 
 // Funcion para cambiar el tipo de moneda
