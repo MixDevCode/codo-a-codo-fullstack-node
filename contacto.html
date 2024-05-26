@@ -19,33 +19,113 @@
             <a href="productos.html">Productos</a>
             <a href="contacto.html" class="active">Contacto</a>
             <div class="dropdown">
-              <button class="dropbtn">
-                <i class="fas fa-dollar-sign"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#" onclick="setPrice('peso')">Pesos<span><i class="fas fa-check hidden" id="peso"></i></span></a>
-                <a href="#" onclick="setPrice('dolar')">Dólares<span><i class="fas fa-check hidden" id="dolar"></i></span></a>
-              </div>
+                <button class="dropbtn">
+                    <i class="fas fa-dollar-sign"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="setPrice('peso')">Pesos<span><i class="fas fa-check hidden"
+                                id="peso"></i></span></a>
+                    <a href="#" onclick="setPrice('dolar')">Dólares<span><i class="fas fa-check hidden"
+                                id="dolar"></i></span></a>
+                </div>
             </div>
             <a href="javascript:void(0);" class="icon" onclick="mostrarNav()">&#9776;</a>
-          </div>
+        </div>
     </section>
     <div class="container row">
         <div class="left-column">
             <!-- Iframe -->
-            <p style="font-size: 16px;">Hola, aca esta nuestro iframe con la direccion de nuestra tienda fisica oficial! Venga a visitarnos!!!</p>
-            <div style="width: 100%"><iframe width="80%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Av.%20Dr.%20Honorio%20Pueyrred%C3%B3n%201841,%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires,%20Argentina+(Insutech)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps tracker sport</a></iframe></div>
+            <p style="font-size: 16px;">Hola, aca esta nuestro iframe con la direccion de nuestra tienda fisica oficial!
+                Venga a visitarnos!!!</p>
+            <div style="width: 100%"><iframe width="80%" height="500" frameborder="0" scrolling="no" marginheight="0"
+                    marginwidth="0"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Av.%20Dr.%20Honorio%20Pueyrred%C3%B3n%201841,%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires,%20Argentina+(Insutech)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                        href="https://www.gps.ie/">gps tracker sport</a></iframe></div>
             <!-- Iconos con redes sociales y telefono -->
             <i class="fa-solid fa-phone"></i>
         </div>
 
         <div class="right-column">
             <!-- Formulario -->
-            <form action="" method="post">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="user_name">
-                <label for="email">Email</label>
-                <input type="email" id="mail" name="user_email">
+            <h1>Formulario de Venta de Productos</h1>
+            <form action="" method="post" target="_blank">
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    <div class="formulario">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" size="30" maxlength="50" placeholder="Tu nombre..."
+                            required>
+                    </div>
+                    <div class="formulario">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" size="30" maxlength="50"
+                            placeholder="Tu apellido..." required>
+                    </div>
+                    <div class="formulario">
+                        <label for="email">Email</label>
+                        <input type="email" id="mail" name="email" size="50" maxlength="60"
+                            placeholder="Tu correo email..." required>
+                    </div>
+                    <div class="formulario">
+                        <label for="provincia">Provincia</label>
+                        <select id="provincia" name="provincia" required>
+                            <option value="" disabled selected hidden>Selecciona una provincia...</option>
+                            <option value="buenos_aires">Buenos Aires</option>
+                            <option value="caba">Ciudad Autónoma de Buenos Aires</option>
+                            <option value="catamarca">Catamarca</option>
+                            <option value="chaco">Chaco</option>
+                            <option value="chubut">Chubut</option>
+                            <option value="cordoba">Córdoba</option>
+                            <option value="corrientes">Corrientes</option>
+                            <option value="entre_rios">Entre Ríos</option>
+                            <option value="formosa">Formosa</option>
+                            <option value="jujuy">Jujuy</option>
+                            <option value="la_pampa">La Pampa</option>
+                            <option value="la_rioja">La Rioja</option>
+                            <option value="mendoza">Mendoza</option>
+                            <option value="misiones">Misiones</option>
+                            <option value="neuquen">Neuquén</option>
+                            <option value="rio_negro">Río Negro</option>
+                            <option value="salta">Salta</option>
+                            <option value="san_juan">San Juan</option>
+                            <option value="san_luis">San Luis</option>
+                            <option value="santa_cruz">Santa Cruz</option>
+                            <option value="santa_fe">Santa Fe</option>
+                            <option value="santiago_del_estero">Santiago del Estero</option>
+                            <option value="tierra_del_fuego">Tierra del Fuego</option>
+                            <option value="tucuman">Tucumán</option>
+                        </select>
+                    </div>
+                    <div class="formulario">
+                        <label for="ciudad">Ciudad</label>
+                        <select id="ciudad" name="ciudad" required>
+                            <option value="" disabled selected hidden>Selecciona una ciudad...</option>
+                            <!-- Funcion Js -->
+                        </select>
+                    </div>
+                    <fieldset>
+                        <legend>Motivo</legend>
+                        <div class="formulario">
+                            <div>
+                                <input type="radio" id="Consulta" name="motivo" value="Consulta" required>
+                                <label for="consulta">Consulta</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Reclamo" name="motivo" value="Reclamo" required>
+                                <label for="reclamo">Reclamo</label>
+                            </div>
+                        </div>
+                        <div class="formulario">
+                            <label for="comentario">Comentario</label>
+                            <textarea id="comentario" name="comentario" rows="4" cols="50"
+                                placeholder="Escribe tu comentario aquí..."></textarea>
+                        </div>
+                        <div class="formulario">
+                            <label for="imagen">Imagen (PNG o JPG, hasta 10MB)</label>
+                            <input type="file" id="imagen" name="imagen" accept="image/png, image/jpeg">
+                        </div>
+                    </fieldset>
+                </fieldset>
                 <button type="submit">Enviar</button>
             </form>
         </div>

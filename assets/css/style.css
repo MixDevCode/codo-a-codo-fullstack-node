@@ -726,3 +726,55 @@ swiper-slide img {
     object-fit: cover;
   }
 }
+
+/* Formulario */
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-top: 20px; /* Agregamos un poco de espacio superior */
+  margin-bottom: 20px; /* Agregamos un poco de espacio inferior */
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #a7def8;
+  border-radius: 10px;
+  background-color: #f9f9f9; /* Cambiamos el color de fondo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario {
+  margin-bottom: 20px; /* Aumentamos el espacio entre elementos del formulario */
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 5px; /* Reducimos el espacio inferior entre etiquetas */
+  font-weight: bold;
+}
+
+.formulario select {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #7495c5;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5cc56e;
+  color: #ffffff; /* Cambiamos el color del texto a blanco */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
