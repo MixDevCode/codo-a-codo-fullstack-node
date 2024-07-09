@@ -1,8 +1,8 @@
 const express = require("express");
+const { usuariosController } = require("../controllers");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.send("API Running");
-})
+router.post("/crearUsuario", usuariosController.crearUsuario);
+router.put("/activarUsuario", usuariosController.activateUsuario);
 
 module.exports = router;
