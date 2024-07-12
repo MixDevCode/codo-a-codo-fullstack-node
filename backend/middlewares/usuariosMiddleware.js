@@ -36,13 +36,20 @@ module.exports = {
     },
     verifyToken: async (req, res, next) => {
         try {
-            const token = req.headers.authorization;
+            if(!req.headers.authorization) {
+                return res.status(401).json({ message: "Token no encontrado" });
+            }
+            const token = req.headers.authorization.split(" ")[1];
             if(!token) {
                 return res.status(401).json({ message: "Token no encontrado" });
             }
             const decoded = jwt.verify(token, process.env.JWT_SECRET);
             req.user = decoded;
-            next();
+            if(!req.user) {
+                return res.status(401).json({ message: "Token inválido" });
+            } else {
+                next();
+            }
         } catch (error) {
             console.log(error);
         }
