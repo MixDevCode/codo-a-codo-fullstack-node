@@ -273,7 +273,7 @@
     if (!token) {
       window.location.href = '../index.html';
     } else {
-      fetch('http://localhost:3000/usuarios/getAdminInformation', {
+      fetch('http://157.173.202.10:3050/usuarios/getAdminInformation', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -292,8 +292,8 @@
   </script>
   <script>
     // Example API endpoints
-    const marcasEndpoint = 'http://localhost:3000/productos/obtenerMarcas';
-    const categoriasEndpoint = 'http://localhost:3000/productos/obtenerCategorias'
+    const marcasEndpoint = 'http://157.173.202.10:3050/productos/obtenerMarcas';
+    const categoriasEndpoint = 'http://157.173.202.10:3050/productos/obtenerCategorias'
 
     // Function to populate selects
     function populateSelect(endpoint, selectId, valueField, textField) {
@@ -327,7 +327,7 @@
       window.location.href = 'listar-productos.html';
     }
     // fetch to get the product and set as valu for each input
-    fetch(`http://localhost:3000/productos/buscarProductoPorId?id=${id}`).then(response => response.json()).then(data => {
+    fetch(`http://157.173.202.10:3050/productos/buscarProductoPorId?id=${id}`).then(response => response.json()).then(data => {
       if (data.error) {
         Swal.fire({
           icon: 'error',
@@ -347,7 +347,7 @@
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const formData = new FormData(form);
-      fetch(`http://localhost:3000/productos/modificarProducto?id=${id}`, {
+      fetch(`http://157.173.202.10:3050/productos/modificarProducto?id=${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`

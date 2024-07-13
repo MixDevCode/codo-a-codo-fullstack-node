@@ -252,7 +252,7 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script>
         const categoria = document.getElementById('categorias');
-        fetch(`http://localhost:3000/productos/obtenerCategorias`, {
+        fetch(`http://157.173.202.10:3050/productos/obtenerCategorias`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -278,7 +278,7 @@
     </script>
     <script>
         const marcas = document.getElementById('marcas');
-        fetch(`http://localhost:3000/productos/obtenerMarcas`, {
+        fetch(`http://157.173.202.10:3050/productos/obtenerMarcas`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -337,7 +337,7 @@
             parameters = '?orden=ALL';
         }
         const products = document.querySelector('#products-row');
-        fetch(`http://localhost:3000/productos/filtrarProductos${parameters}`, {
+        fetch(`http://157.173.202.10:3050/productos/filtrarProductos${parameters}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -356,7 +356,7 @@
                             card2.classList.add('card', 'rounded-0');
                             const img = document.createElement('img');
                             img.classList.add('card-img', 'rounded-0', 'img-fluid');
-                            img.setAttribute('src', `http://localhost:3000/productos/images/${product.imagen}`);
+                            img.setAttribute('src', `http://157.173.202.10:3050/productos/images/${product.imagen}`);
                             const card2overlay = document.createElement('div');
                             card2overlay.classList.add('card-img-overlay', 'rounded-0', 'product-overlay', 'd-flex', 'align-items-center', 'justify-content-center');
                             const ul = document.createElement('ul');
@@ -404,7 +404,7 @@
                 <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
             `;
         } else {
-            fetch('http://localhost:3000/usuarios/getUserInformation', {
+            fetch('http://157.173.202.10:3050/usuarios/getUserInformation', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

@@ -241,7 +241,7 @@
   <script>
     const table = $('#usersTable').DataTable({
         "ajax": {
-            "url": "http://localhost:3000/usuarios/getAllUsuariosDT",
+            "url": "http://157.173.202.10:3050/usuarios/getAllUsuariosDT",
             "dataSrc": "data",
             "headers": {
                 "Authorization": "Bearer " + Cookies.get("token")
@@ -279,7 +279,7 @@
             confirmButtonText: 'Sí, eliminarlo!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/usuarios/eliminarUsuario?id=${id}`, {
+                fetch(`http://157.173.202.10:3050/usuarios/eliminarUsuario?id=${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -308,7 +308,7 @@
     if (!token) {
         window.location.href = '../index.html';
     } else {
-        fetch('http://localhost:3000/usuarios/getAdminInformation', {
+        fetch('http://157.173.202.10:3050/usuarios/getAdminInformation', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`

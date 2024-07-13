@@ -251,7 +251,7 @@
     if (!token) {
         window.location.href = '../index.html';
     } else {
-        fetch('http://localhost:3000/usuarios/getAdminInformation', {
+        fetch('http://157.173.202.10:3050/usuarios/getAdminInformation', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -273,7 +273,7 @@
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    fetch('http://localhost:3000/productos/agregarMarca', {
+    fetch('http://157.173.202.10:3050/productos/agregarMarca', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`

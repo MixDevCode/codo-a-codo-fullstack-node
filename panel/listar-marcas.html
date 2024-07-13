@@ -243,7 +243,7 @@
     if (!token) {
         window.location.href = '../index.html';
     } else {
-        fetch('http://localhost:3000/usuarios/getAdminInformation', {
+        fetch('http://157.173.202.10:3050/usuarios/getAdminInformation', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -263,7 +263,7 @@
   <script>
     const table = $('#marcasTable').DataTable({
         "ajax": {
-            "url": "http://localhost:3000/productos/getAllMarcasDT",
+            "url": "http://157.173.202.10:3050/productos/getAllMarcasDT",
             "headers": {
                 "Authorization": `Bearer ${token}`
             },
@@ -302,7 +302,7 @@
             confirmButtonText: 'Sí, eliminarla!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/productos/eliminarMarca?id=${id}`, {
+                fetch(`http://157.173.202.10:3050/productos/eliminarMarca?id=${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',

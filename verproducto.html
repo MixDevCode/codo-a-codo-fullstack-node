@@ -262,7 +262,7 @@
 
         const id = params.id;
         if(id) {
-            fetch(`http://localhost:3000/productos/buscarProductoPorId?id=${id}`, {
+            fetch(`http://157.173.202.10:3050/productos/buscarProductoPorId?id=${id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -274,7 +274,7 @@
                         document.querySelector('#productName').innerHTML = data.nombre;
                         document.querySelector('#productDescription').innerHTML = `${data.descripcion}`;
                         document.querySelector('#productPrice').innerHTML = `$${data.precio}`;
-                        document.querySelector('#productImage').src = `http://localhost:3000/productos/images/${data.imagen}`;
+                        document.querySelector('#productImage').src = `http://157.173.202.10:3050/productos/images/${data.imagen}`;
                         document.querySelector('#productBrand').innerHTML = `<a href="productos.html?marca=${data.id_marca}" class="text-decoration-none">${data.marca}</a>`;
                     })
                 } else {
@@ -300,7 +300,7 @@
                 <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
             `;	
         } else {
-            fetch('http://localhost:3000/usuarios/getUserInformation', {
+            fetch('http://157.173.202.10:3050/usuarios/getUserInformation', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -327,7 +327,7 @@
     <script>
         const productName = document.querySelector('#productName').innerHTML.split(' ')[0];
         const carousel = document.querySelector('#carousel-related-product');
-        fetch(`http://localhost:3000/productos/filtrarProductos?query=${productName}&limite=12`, {
+        fetch(`http://157.173.202.10:3050/productos/filtrarProductos?query=${productName}&limite=12`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -341,7 +341,7 @@
                             <div class="p-2 pb-3">
                                 <div class="product-wap card rounded-0">
                                     <div class="card rounded-0">
-                                        <img class="card-img rounded-0 img-fluid" src="http://localhost:3000/productos/images/${product.imagen}">
+                                        <img class="card-img rounded-0 img-fluid" src="http://157.173.202.10:3050/productos/images/${product.imagen}">
                                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                             <ul class="list-unstyled">
                                                 <li><a class="btn btn-success text-white mt-2" href="verproducto.html?id=${product.id}"><i class="far fa-eye"></i></a></li>

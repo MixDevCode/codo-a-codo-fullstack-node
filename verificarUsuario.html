@@ -234,7 +234,7 @@
 
         const tokenVerify = params.token;
         if(tokenVerify != undefined){
-            fetch('http://localhost:3000/usuarios/activarUsuario', {
+            fetch('http://157.173.202.10:3050/usuarios/activarUsuario', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -273,7 +273,7 @@
                 <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
             `;	
         } else {
-            fetch('http://localhost:3000/usuarios/getUserInformation', {
+            fetch('http://157.173.202.10:3050/usuarios/getUserInformation', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

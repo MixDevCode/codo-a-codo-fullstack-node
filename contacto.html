@@ -242,7 +242,7 @@
         // prevent form submit
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            fetch('http://localhost:3000/formulario/enviarFormulario', {
+            fetch('http://157.173.202.10:3050/formulario/enviarFormulario', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -283,7 +283,7 @@
                 <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
             `;	
         } else {
-            fetch('http://localhost:3000/usuarios/getUserInformation', {
+            fetch('http://157.173.202.10:3050/usuarios/getUserInformation', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
