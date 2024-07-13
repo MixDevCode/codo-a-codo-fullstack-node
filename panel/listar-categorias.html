@@ -240,7 +240,7 @@
   <script>
     const table = $('#categoriasTable').DataTable({
         "ajax": {
-            "url": "http://157.173.202.10:3050/productos/getAllCategoriasDT",
+            "url": "https://cac.alimpuestos.com.ar/productos/getAllCategoriasDT",
             "dataSrc": "data",
             "headers": {
                 "Authorization": "Bearer " + Cookies.get("token")
@@ -274,7 +274,7 @@
             confirmButtonText: 'Sí, eliminarla!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://157.173.202.10:3050/productos/eliminarCategoria?id=${id}`, {
+                fetch(`https://cac.alimpuestos.com.ar/productos/eliminarCategoria?id=${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -303,7 +303,7 @@
     if (!token) {
         window.location.href = '../index.html';
     } else {
-        fetch('http://157.173.202.10:3050/usuarios/getAdminInformation', {
+        fetch('https://cac.alimpuestos.com.ar/usuarios/getAdminInformation', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`

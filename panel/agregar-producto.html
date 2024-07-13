@@ -273,7 +273,7 @@
     if (!token) {
       window.location.href = '../index.html';
     } else {
-      fetch('http://157.173.202.10:3050/usuarios/getAdminInformation', {
+      fetch('https://cac.alimpuestos.com.ar/usuarios/getAdminInformation', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -292,8 +292,8 @@
   </script>
   <script>
     // Example API endpoints
-    const marcasEndpoint = 'http://157.173.202.10:3050/productos/obtenerMarcas';
-    const categoriasEndpoint = 'http://157.173.202.10:3050/productos/obtenerCategorias'
+    const marcasEndpoint = 'https://cac.alimpuestos.com.ar/productos/obtenerMarcas';
+    const categoriasEndpoint = 'https://cac.alimpuestos.com.ar/productos/obtenerCategorias'
 
     // Function to populate selects
     function populateSelect(endpoint, selectId, valueField, textField) {
@@ -322,7 +322,7 @@
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const formData = new FormData(form);
-      fetch('http://157.173.202.10:3050/productos/agregarProducto', {
+      fetch('https://cac.alimpuestos.com.ar/productos/agregarProducto', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

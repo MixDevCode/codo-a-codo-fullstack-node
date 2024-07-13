@@ -313,7 +313,7 @@
                 <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
             `;	
         } else {
-            fetch('http://157.173.202.10:3050/usuarios/getUserInformation', {
+            fetch('https://cac.alimpuestos.com.ar/usuarios/getUserInformation', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -339,7 +339,7 @@
     </script>
     <script>
         // Example API endpoint
-        const apiEndpoint = 'http://157.173.202.10:3050/productos/obtenerMarcas';
+        const apiEndpoint = 'https://cac.alimpuestos.com.ar/productos/obtenerMarcas';
 
         fetch(apiEndpoint)
             .then(response => response.json())
@@ -362,7 +362,7 @@
                         }
                         rowContent += `
                             <div class="col-3 p-md-5">
-                                <a href="#"><img class="img-fluid brand-img" src="http://157.173.202.10:3050/productos/images/${marca.imagen}" alt="Brand Logo"></a>
+                                <a href="#"><img class="img-fluid brand-img" src="https://cac.alimpuestos.com.ar/productos/images/${marca.imagen}" alt="Brand Logo"></a>
                             </div>`;
                     }
                 });

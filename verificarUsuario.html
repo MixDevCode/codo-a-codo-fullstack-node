@@ -234,7 +234,7 @@
 
         const tokenVerify = params.token;
         if(tokenVerify != undefined){
-            fetch('http://157.173.202.10:3050/usuarios/activarUsuario', {
+            fetch('https://cac.alimpuestos.com.ar/usuarios/activarUsuario', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -273,7 +273,7 @@
                 <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
             `;	
         } else {
-            fetch('http://157.173.202.10:3050/usuarios/getUserInformation', {
+            fetch('https://cac.alimpuestos.com.ar/usuarios/getUserInformation', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

@@ -238,7 +238,7 @@
     if (!token) {
         window.location.href = '../index.html';
     } else {
-        fetch('http://157.173.202.10:3050/usuarios/getAdminInformation', {
+        fetch('https://cac.alimpuestos.com.ar/usuarios/getAdminInformation', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -260,7 +260,7 @@
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    fetch('http://157.173.202.10:3050/productos/agregarCategoria', {
+    fetch('https://cac.alimpuestos.com.ar/productos/agregarCategoria', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`

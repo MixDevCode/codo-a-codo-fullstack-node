@@ -263,7 +263,7 @@
     <script>
         // create col and cards for products
         const products = document.querySelector('#latest-products');
-        fetch('http://157.173.202.10:3050/productos/filtrarProductos?limite=9')
+        fetch('https://cac.alimpuestos.com.ar/productos/filtrarProductos?limite=9')
             .then(response => {
                 if(response.ok) {
                     response.json().then(data => {
@@ -277,7 +277,7 @@
                             a.setAttribute('href', `verproducto.html?id=${product.id}`);
                             const img = document.createElement('img');
                             img.classList.add('card-img-top');
-                            img.setAttribute('src', `http://157.173.202.10:3050/productos/images/${product.imagen}`);
+                            img.setAttribute('src', `https://cac.alimpuestos.com.ar/productos/images/${product.imagen}`);
                             const body = document.createElement('div');
                             body.classList.add('card-body');
                             const ul = document.createElement('ul');
@@ -322,7 +322,7 @@
                 <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
             `;	
         } else {
-            fetch('http://157.173.202.10:3050/usuarios/getUserInformation', {
+            fetch('https://tight-bar-7da0.lucasscifo14.workers.dev/usuarios/getUserInformation', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

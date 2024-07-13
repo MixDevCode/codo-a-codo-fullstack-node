@@ -312,7 +312,7 @@
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
   <script>
     const categorias = document.getElementById('categorias');
-    fetch(`http://157.173.202.10:3050/productos/obtenerCategorias`, {
+    fetch(`https://cac.alimpuestos.com.ar/productos/obtenerCategorias`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -330,7 +330,7 @@
   </script>
   <script>
     const marcas = document.getElementById('marcas');
-    fetch(`http://157.173.202.10:3050/productos/obtenerMarcas`, {
+    fetch(`https://cac.alimpuestos.com.ar/productos/obtenerMarcas`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -348,7 +348,7 @@
   </script>
   <script>
     const productos = document.getElementById('productos');
-    fetch(`http://157.173.202.10:3050/productos/getAllProductos`, {
+    fetch(`https://cac.alimpuestos.com.ar/productos/getAllProductos`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -367,7 +367,7 @@
   <script>
     const usuarios = document.getElementById('usuarios');
     const tablaUsuarios = document.getElementById('tabla-usuarios');
-    fetch(`http://157.173.202.10:3050/usuarios/getAllUsuarios`, {
+    fetch(`https://cac.alimpuestos.com.ar/usuarios/getAllUsuarios`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -408,7 +408,7 @@
     if (!token) {
         window.location.href = '../index.html';
     } else {
-        fetch('http://157.173.202.10:3050/usuarios/getAdminInformation', {
+        fetch('https://cac.alimpuestos.com.ar/usuarios/getAdminInformation', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
