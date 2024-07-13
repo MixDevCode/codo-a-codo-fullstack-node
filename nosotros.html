@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Insutech - Contacto</title>
+    <title>Insutech - Sobre Nosotros</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,9 +16,6 @@
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-
-    <!-- Load map styles -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
 </head>
 
 <body>
@@ -118,47 +115,116 @@
     </div>
 
 
-    <!-- Start Content Page -->
-    <div class="container-fluid bg-light py-5">
-        <div class="col-md-6 m-auto text-center">
-            <h1 class="h1">Contactanos</h1>
-            <p>
-                ¿Tienes alguna consulta? ¡Escribinos!
-            </p>
-        </div>
-    </div>
 
-    <!-- Start Contact -->
-    <div class="container py-5">
-        <div class="row py-5">
-            <form class="col-md-9 m-auto" method="post" role="form" id="contactForm">
-                <div class="row">
-                    <div class="form-group col-md-6 mb-3">
-                        <label for="inputname">Nombre</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Nombre">
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
-                        <label for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Correo Electronico">
-                    </div>
+    <section class="bg-success py-5">
+        <div class="container">
+            <div class="row align-items-center py-5">
+                <div class="col-md-8 text-white">
+                    <h1>Sobre Nosotros</h1>
+                    <p>
+                        En 2012, en el tranquilo pueblo de San Isidro, Buenos Aires, Martín Pérez decidió transformar su pasión por la tecnología en un negocio. Con el apoyo de su comunidad, fundó Insutech, comenzando con la venta de componentes informáticos desde su garaje.<br><br>
+                        El compromiso de Martín con la calidad y el servicio al cliente permitió que Insutech creciera rápidamente. En pocos años, abrió su primera tienda en el centro del pueblo y lanzó una tienda en línea que llevó sus productos a toda la provincia.<br><br>
+                        Para 2020, Insutech se había consolidado como una empresa líder en ventas de insumos informáticos en Argentina, con múltiples sucursales y una fuerte presencia digital.<br><br>
+                        Hoy, Insutech sigue innovando y ofreciendo tecnología de vanguardia a clientes de todo el país.
+                    </p>
                 </div>
-                <div class="mb-3">
-                    <label for="inputsubject">Motivo</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Motivo de Contacto">
+                <div class="col-md-4">
+                    <img src="assets/img/logo.png" alt="Insutech" style="filter:brightness(0);">
                 </div>
-                <div class="mb-3">
-                    <label for="inputmessage">Mensaje</label>
-                    <textarea class="form-control mt-1" id="message" name="message" placeholder="Mensaje" rows="8"></textarea>
-                </div>
-                <div class="row">
-                    <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
-    <!-- End Contact -->
+    </section>
+    <!-- Close Banner -->
+
+    <!-- Start Section -->
+    <section class="container py-5">
+        <div class="row text-center pt-5 pb-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Nuestros servicios</h1>
+                <p>
+                    En Insutech nos aseguramos de que cada cliente obtenga la mejor atención.<br>
+                    Por eso, ofrecemos una amplia variedad de productos y servicios.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6 col-lg-3 pb-5">
+                <div class="h-100 py-5 services-icon-wap shadow">
+                    <div class="h1 text-success text-center"><i class="fa fa-truck fa-lg"></i></div>
+                    <h2 class="h5 mt-4 text-center">Entregas</h2>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 pb-5">
+                <div class="h-100 py-5 services-icon-wap shadow">
+                    <div class="h1 text-success text-center"><i class="fas fa-exchange-alt"></i></div>
+                    <h2 class="h5 mt-4 text-center">Devoluciones</h2>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 pb-5">
+                <div class="h-100 py-5 services-icon-wap shadow">
+                    <div class="h1 text-success text-center"><i class="fa fa-percent"></i></div>
+                    <h2 class="h5 mt-4 text-center">Descuentos</h2>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 pb-5">
+                <div class="h-100 py-5 services-icon-wap shadow">
+                    <div class="h1 text-success text-center"><i class="fa fa-user"></i></div>
+                    <h2 class="h5 mt-4 text-center">Servicio 24/7</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <!-- Start Brands -->
+    <section class="bg-light py-5">
+        <div class="container my-4">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Nuestras marcas</h1>
+                    <p>
+                        Al ser una empresa muy reconocida en el rubro, tenemos convenio con la mayoría de las marcas líderes en la industria.
+                    </p>
+                </div>
+                <div class="col-lg-9 m-auto tempaltemo-carousel">
+                    <div class="row d-flex flex-row">
+                        <!--Controls-->
+                        <div class="col-1 align-self-center">
+                            <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="prev">
+                                <i class="text-light fas fa-chevron-left"></i>
+                            </a>
+                        </div>
+                        <!--End Controls-->
+
+                        <!--Carousel Wrapper-->
+                        <div class="col">
+                            <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="templatemo-slide-brand" data-bs-ride="carousel">
+                                <!--Slides-->
+                                <div class="carousel-inner product-links-wap" role="listbox" id="marcasCarousel">
+
+                                </div>
+                                <!--End Slides-->
+                            </div>
+                        </div>
+                        <!--End Carousel Wrapper-->
+
+                        <!--Controls-->
+                        <div class="col-1 align-self-center">
+                            <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="next">
+                                <i class="text-light fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                        <!--End Controls-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Brands-->
 
 
     <!-- Start Footer -->
@@ -236,42 +302,6 @@
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- End Script -->
-     <script>
-        // prevent form submit
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            fetch('http://localhost:3000/formulario/enviarFormulario', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: document.getElementById('name').value,
-                    subject: document.getElementById('subject').value,
-                    email: document.getElementById('email').value,
-                    message: document.getElementById('message').value
-                })
-            }).then(response => response.json()).then(data => {
-                if(data.error) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: data.error
-                    })
-                } else {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Gracias por contactarnos',
-                        text: 'Nos pondremos en contacto con usted lo antes posible'
-                    }).then(function () {
-                        document.location.href = 'index.html';
-                    })
-                }
-            })
-        });
-     </script>
     <script>
         // check if token exist in token
         const token = Cookies.get('token');
@@ -307,6 +337,47 @@
             })
         }
     </script>
+    <script>
+        // Example API endpoint
+        const apiEndpoint = 'http://localhost:3000/productos/obtenerMarcas';
+
+        fetch(apiEndpoint)
+            .then(response => response.json())
+            .then(data => {
+                const carouselContent = document.getElementById('marcasCarousel');
+                let slideIndex = 0;
+                let rowContent = '';
+
+                data.forEach((marca, index) => {
+                    if(marca.convenio === 1) {
+                        if (index % 4 === 0) {
+                            if (rowContent) {
+                                const carouselItem = document.createElement('div');
+                                carouselItem.className = `carousel-item ${slideIndex === 0 ? 'active' : ''}`;
+                                carouselItem.innerHTML = `<div class="row">${rowContent}</div>`;
+                                carouselContent.appendChild(carouselItem);
+                                rowContent = '';
+                                slideIndex++;
+                            }
+                        }
+                        rowContent += `
+                            <div class="col-3 p-md-5">
+                                <a href="#"><img class="img-fluid brand-img" src="http://localhost:3000/productos/images/${marca.imagen}" alt="Brand Logo"></a>
+                            </div>`;
+                    }
+                });
+
+                // Append the last set of items if there are any
+                if (rowContent) {
+                    const carouselItem = document.createElement('div');
+                    carouselItem.className = `carousel-item ${slideIndex === 0 ? 'active' : ''}`;
+                    carouselItem.innerHTML = `<div class="row">${rowContent}</div>`;
+                    carouselContent.appendChild(carouselItem);
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+    <!-- End Script -->
 </body>
 
 </html>

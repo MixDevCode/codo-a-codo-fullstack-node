@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <title>Dashboard - Agregar Marca</title>
+  <style>
+    #loader {
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+      visibility: visible;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      background: #fff;
+      z-index: 90000;
+    }
+
+    #loader.fadeOut {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: calc(50% - 20px);
+      left: calc(50% - 20px);
+      background-color: #333;
+      border-radius: 100%;
+      -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+      animation: sk-scaleout 1.0s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0)
+      }
+
+      100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+
+    @keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+
+      100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+  </style>
+  <script defer="defer" src="main.js"></script>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css" rel="stylesheet">
+</head>
+
+<body class="app">
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <script>
+    window.addEventListener('load', function load() {
+      const loader = document.getElementById('loader');
+      setTimeout(function () {
+        loader.classList.add('fadeOut');
+      }, 300);
+    });
+  </script>
+  <div>
+    <!-- #Left Sidebar ==================== -->
+    <div class="sidebar">
+      <div class="sidebar-inner">
+        <!-- ### $Sidebar Menu ### -->
+        <ul class="sidebar-menu scrollable pos-r">
+          <li class="nav-item mT-30 actived">
+            <a class="sidebar-link" href="index.html">
+              <span class="icon-holder">
+                <i class="c-blue-500 ti-home"></i>
+              </span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="c-orange-500 ti-package"></i>
+              </span>
+              <span class="title">Productos</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="sidebar-link" href="agregar-producto.html">Agregar Producto</a>
+              </li>
+              <li>
+                <a class="sidebar-link" href="listar-productos.html">Listar Productos</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown open">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="c-purple-500 ti-layout-list-thumb"></i>
+              </span>
+              <span class="title">Marcas</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="sidebar-link" href="agregar-marca.html">Agregar Marca</a>
+              </li>
+              <li>
+                <a class="sidebar-link" href="listar-marcas.html">Listar Marcas</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="c-green-500 ti-user"></i>
+              </span>
+              <span class="title">Usuarios</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="sidebar-link" href="agregar-usuario.html">Agregar Usuario</a>
+              </li>
+              <li>
+                <a class="sidebar-link" href="listar-usuarios.html">Listar Usuarios</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="c-black-500 ti-view-list"></i>
+              </span>
+              <span class="title">Categorías</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="sidebar-link" href="agregar-categoria.html">Agregar Categoría</a>
+              </li>
+              <li>
+                <a class="sidebar-link" href="listar-categorias.html">Listar Categorías</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- #Main ============================ -->
+    <div class="page-container">
+      <!-- ### $Topbar ### -->
+      <div class="header navbar">
+        <div class="header-container">
+          <ul class="nav-left">
+            <li>
+              <a id="sidebar-toggle" class="sidebar-toggle" href="javascript:void(0);">
+                <i class="ti-menu"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav-right">
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-bs-toggle="dropdown">
+                <div class="peer">
+                  <span class="fsz-sm c-grey-900" id="userName"></span>
+                </div>
+              </a>
+              <ul class="dropdown-menu fsz-sm">
+                <li>
+                  <a href="../index.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-power-off mR-10"></i>
+                    <span>Salir del panel</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <main class="main-content bgc-grey-100">
+        <div id="mainContent">
+          <div class="row gap-20 masonry pos-r">
+            <div class="masonry-sizer col-md-6"></div>
+            <div class="masonry-item col-md-12">
+              <div class="bgc-white p-20 bd">
+                <h6 class="c-grey-900">Agregar Marca</h6>
+                <div class="mT-30">
+                  <form enctype="multipart/form-data" action="" method="POST" id="marcaForm">
+                    <div class="row">
+                      <div class="mb-3 col-md-6">
+                        <label class="form-label" for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre de la marca">
+                      </div>
+                      <div class="mb-3 col-md-6">
+                        <label class="form-label" for="convenio">¿Tiene convenio?</label>
+                        <select id="convenio" class="form-control" name="convenio">
+                          <option selected="selected" value="1">Si</option>
+                          <option value="2">No</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="image">Imagen</label>
+                      <input type="file" class="form-control" id="image" name="imagen">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-color">Agregar Marca</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ### $App Screen Footer ### -->
+      <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+        <span>Copyright © 2024 Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a>.
+          All rights reserved.</span>
+      </footer>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    const token = Cookies.get('token');
+    if (!token) {
+        window.location.href = '../index.html';
+    } else {
+        fetch('http://localhost:3000/usuarios/getAdminInformation', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.error) {
+                Cookies.remove('token');
+                window.location.href = 'index.html';
+            } else {
+              document.getElementById('userName').innerHTML = `${data.nombre_completo}`
+            }
+        })
+    }
+</script>
+<script>
+  const form = document.getElementById('marcaForm');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    fetch('http://localhost:3000/productos/agregarMarca', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: data.error
+        })
+      } else {
+        Swal.fire({
+          icon: 'success',
+          title: 'La marca ha sido agregada',
+          text: '¿Deseas agregar una nueva marca?',
+          confirmButtonText: 'Si',
+          showCancelButton: true,
+          cancelButtonText: 'No',
+          cancelButtonColor: '#d33',
+          confirmButtonColor: '#3085d6'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = 'agregar-marca.html';
+          } else {
+            window.location.href = 'listar-marcas.html';
+          }
+        })
+      }
+    })
+  })
+</script>
+</body>
+</html>

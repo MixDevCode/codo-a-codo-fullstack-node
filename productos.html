@@ -1,187 +1,434 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Insutech</title>
-    <!-- Font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
 
-  <body>
-    <div class="loading">
-      <div class="uil-ring-css" style="transform: scale(0.79)">
-        <div></div>
-      </div>
+<head>
+    <title>Insutech - Productos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none"
+                        href="mailto:info@insutech.com.ar">info@insutech.com.ar</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:5491151231245">+54 9 11
+                        5123-1245</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://facebook.com/" target="_blank" rel="sponsored"><i
+                            class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i
+                            class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i
+                            class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i
+                            class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-primary logo h1 align-self-center" href="index.html">
+                Insutech
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Buscar ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
+                        data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <div class="dropdown">
+                        <a class="nav-icon position-relative text-decoration-none dropdown-toggle" href="#"
+                            id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown" id="userList">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="productos.html" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="query" placeholder="Buscar ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-    <section id="header">
-      <div class="navbar-brand">
-        <img src="assets/img/logo.png" alt="Insutech" width="200" />
-      </div>
-      <div class="topnav" id="myTopnav">
-        <a href="index.html">Inicio</a>
-        <a href="productos.html" class="active">Productos</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="javascript:void(0);" class="icon" onclick="mostrarNav()"
-          >&#9776;</a
-        >
-      </div>
-    </section>
-    <div class="container">
-      <h1 class="framed-title">Listado de Productos</h1>
-      <hr />
-      <div class="card-list">
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/SA400S37-240G.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Disco Sólido SSD 240GB Kingston A400</h3>
-          <span class="price">$ 29.694,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.armytech.com.ar/Image/0/450_450-1200_1200-Proyecto_nuevo.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Monitor Samsung LED 22" T350H IPS</h3>
-          <span class="price">$ 161.993,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Mouse Logitech G203 Gaming LIGHTSYNC</h3>
-          <span class="price">$ 28.560,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/SA400S37-240G.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Disco Sólido SSD 240GB Kingston A400</h3>
-          <span class="price">$ 29.694,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.armytech.com.ar/Image/0/450_450-1200_1200-Proyecto_nuevo.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Monitor Samsung LED 22" T350H IPS</h3>
-          <span class="price">$ 161.993,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Mouse Logitech G203 Gaming LIGHTSYNC</h3>
-          <span class="price">$ 28.560,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/SA400S37-240G.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Disco Sólido SSD 240GB Kingston A400</h3>
-          <span class="price">$ 29.694,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.armytech.com.ar/Image/0/450_450-1200_1200-Proyecto_nuevo.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Monitor Samsung LED 22" T350H IPS</h3>
-          <span class="price">$ 161.993,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Mouse Logitech G203 Gaming LIGHTSYNC</h3>
-          <span class="price">$ 28.560,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/SA400S37-240G.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Disco Sólido SSD 240GB Kingston A400</h3>
-          <span class="price">$ 29.694,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.armytech.com.ar/Image/0/450_450-1200_1200-Proyecto_nuevo.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Monitor Samsung LED 22" T350H IPS</h3>
-          <span class="price">$ 161.993,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Mouse Logitech G203 Gaming LIGHTSYNC</h3>
-          <span class="price">$ 28.560,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.armytech.com.ar/Image/0/450_450-1200_1200-Proyecto_nuevo.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Monitor Samsung LED 22" T350H IPS</h3>
-          <span class="price">$ 161.993,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Mouse Logitech G203 Gaming LIGHTSYNC</h3>
-          <span class="price">$ 28.560,00</span>
-        </a>
-        <a href="producto.html" class="card-item">
-          <img
-            src="https://www.fullh4rd.com.ar/img/productos/14/mouse-logitech-g203-gaming-lightsync-black-910005793-0.jpg"
-            alt="Card Image"
-            class="prod-img"
-          />
-          <h3>Mouse Logitech G203 Gaming LIGHTSYNC</h3>
-          <span class="price">$ 28.560,00</span>
-        </a>
-      </div>
+
+
+
+    <!-- Start Content -->
+    <div class="container py-5">
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h1 class="h2 pb-4">Categorías</h1>
+                <ul class="list-unstyled templatemo-accordion">
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Tipo
+                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul class="collapse show list-unstyled pl-3 categories" id="categorias">
+
+                        </ul>
+                    </li>
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Marcas
+                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul class="collapse list-unstyled pl-3" id="marcas">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-12 pb-4">
+                        <div class="d-flex">
+                            <select class="form-control" id="sort-select">
+                                <option value="ALL">Últimos productos</option>
+                                <option value="ASC">A a la Z</option>
+                                <option value="DESC">Z a la A</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="products-row">
+                </div>
+            </div>
+
+        </div>
     </div>
-    <br />
-    <footer>
-      <p>© 2024 Insutech</p>
+    <!-- End Content -->
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 pt-5">
+                    <h2 class="h2 text-primary border-bottom pb-3 border-light logo">Insutech</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Av. Dr. Honorio Pueyrredón 1841, Ciudad Autónoma de Buenos Aires
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:5491151231245">+54 9 11 5123-1245</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info@insutech.com.ar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <div class="text-end">
+                        <img src="https://i0.wp.com/ignacioonline.com.ar/wp-content/uploads/2013/04/Data-fiscal-Web.jpg?resize=145%2C200&ssl=1" class="img-fluid" alt="Responsive image" style="max-height: 100px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2024 Insutech
+                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </footer>
-    <script src="assets/js/main.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script>
-      setPrice();
+        const categoria = document.getElementById('categorias');
+        fetch(`http://localhost:3000/productos/obtenerCategorias`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    response.json().then(data => {
+                        data.forEach(product => {
+                            const li = document.createElement('li');
+                            const a = document.createElement('a');
+                            a.classList.add('text-decoration-none');
+                            a.href = `productos.html?categoria=${product.id}`;
+                            a.textContent = `${product.nombre} (${product.count})`;
+                            li.appendChild(a);
+                            categoria.appendChild(li);
+                        })
+                    })
+                } else {
+                    categoria.innerHTML = "No se encontraron categorías";
+                }
+            })
     </script>
-  </body>
+    <script>
+        const marcas = document.getElementById('marcas');
+        fetch(`http://localhost:3000/productos/obtenerMarcas`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    response.json().then(data => {
+                            data.forEach(product => {
+                                const li = document.createElement('li');
+                                const a = document.createElement('a');
+                                a.classList.add('text-decoration-none');
+                                a.href = `productos.html?marca=${product.id}`;
+                                a.textContent = `${product.nombre} (${product.count})`;
+                                li.appendChild(a);
+                                marcas.appendChild(li);
+                            })
+                        });
+                } else {
+                    marcas.innerHTML = "No se encontraron marcas";
+                }
+            })
+    </script>
+    <script>
+        const select = document.querySelector('#sort-select');
+
+        select.addEventListener('change', () => {
+            const selectedValue = select.value;
+            const url = new URL(window.location.href);
+            url.searchParams.set('orden', selectedValue);
+            window.location.href = url.href;
+        });
+
+        const selectParams = new URLSearchParams(window.location.search);
+        const selectedValue = selectParams.get('orden');
+        if (selectedValue) {
+            select.value = selectedValue;
+        }
+    </script>
+    <script>
+        const searchParams = new URLSearchParams(window.location.search);
+
+        // Convierte los parámetros a un array de pares clave-valor
+        const paramsArray = [];
+        for (const [key, value] of searchParams.entries()) {
+            if (value) {
+                paramsArray.push(`${key}=${value}`);
+            }
+        }
+
+        const joinedParams = paramsArray.join('&');
+        let parameters;
+        if (joinedParams.length) {
+            parameters = `?${joinedParams}`;
+        } else {
+            parameters = '?orden=ALL';
+        }
+        const products = document.querySelector('#products-row');
+        fetch(`http://localhost:3000/productos/filtrarProductos${parameters}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    response.json().then(data => {
+                        data.forEach(product => {
+                            const col = document.createElement('div');
+                            col.classList.add('col-md-4');
+
+                            const card = document.createElement('div');
+                            card.classList.add('card', 'mb-4', 'product-wap', 'rounded-0');
+                            const card2 = document.createElement('div');
+                            card2.classList.add('card', 'rounded-0');
+                            const img = document.createElement('img');
+                            img.classList.add('card-img', 'rounded-0', 'img-fluid');
+                            img.setAttribute('src', `http://localhost:3000/productos/images/${product.imagen}`);
+                            const card2overlay = document.createElement('div');
+                            card2overlay.classList.add('card-img-overlay', 'rounded-0', 'product-overlay', 'd-flex', 'align-items-center', 'justify-content-center');
+                            const ul = document.createElement('ul');
+                            ul.classList.add('list-unstyled');
+                            const li = document.createElement('li');
+                            li.innerHTML = `<a class="btn btn-success text-white mt-2" href="verproducto.html?id=${product.id}"><i class="far fa-eye"></i></a>`;
+                            const card2body = document.createElement('div');
+                            card2body.classList.add('card-body');
+                            const a = document.createElement('a');
+                            a.setAttribute('href', 'shop-single.html');
+                            a.classList.add('h3', 'text-decoration-none');
+                            a.innerHTML = product.nombre;
+                            const p = document.createElement('p');
+                            p.classList.add('text-start', 'mb-0');
+                            p.innerHTML = `$${product.precio}`;
+
+                            ul.appendChild(li);
+                            card2overlay.appendChild(ul);
+                            card2body.appendChild(a);
+                            card2body.appendChild(p);
+                            card2.appendChild(img);
+                            card2.appendChild(card2overlay);
+                            card2.appendChild(card2body);
+
+                            card.appendChild(card2);
+                            col.appendChild(card);
+                            products.appendChild(col);
+                        });
+                    });
+                } else {
+                    products.innerHTML = "<div class='text-center'>No se encontraron productos</div>";
+                }
+            })
+            .catch(error => console.error(error));
+
+    </script>
+    <script>
+        // check if token exist in token
+        const token = Cookies.get('token');
+        const dropdown = document.querySelector('#userList');
+        if (!token) {
+            // ad li item for login and register
+            dropdown.innerHTML = `
+                <li><a class="dropdown-item" href="login.html">Iniciar Sesión</a></li>
+                <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
+            `;
+        } else {
+            fetch('http://localhost:3000/usuarios/getUserInformation', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        Cookies.remove('token');
+                        dropdown.innerHTML = `
+                        <li><a class="dropdown-item" href="login.html">Iniciar Sesión</a></li>
+                        <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
+                    `;
+                    }
+                    dropdown.innerHTML = `
+                    <li><a class="dropdown-item disabled" href="#">${data.nombre_completo}</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/panel">Panel</a></li>
+                    <li><a class="dropdown-item" href="logout.html">Cerrar Sesión</a></li>
+                `;
+                })
+        }
+    </script>
+    <!-- End Script -->
+</body>
+
 </html>

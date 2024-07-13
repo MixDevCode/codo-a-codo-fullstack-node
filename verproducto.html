@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Insutech - Contacto</title>
+    <title>Insutech - Ver Producto</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 
-    <!-- Load map styles -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
 </head>
 
 <body>
@@ -118,47 +119,60 @@
     </div>
 
 
-    <!-- Start Content Page -->
-    <div class="container-fluid bg-light py-5">
-        <div class="col-md-6 m-auto text-center">
-            <h1 class="h1">Contactanos</h1>
-            <p>
-                ¿Tienes alguna consulta? ¡Escribinos!
-            </p>
-        </div>
-    </div>
 
-    <!-- Start Contact -->
-    <div class="container py-5">
-        <div class="row py-5">
-            <form class="col-md-9 m-auto" method="post" role="form" id="contactForm">
-                <div class="row">
-                    <div class="form-group col-md-6 mb-3">
-                        <label for="inputname">Nombre</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Nombre">
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
-                        <label for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Correo Electronico">
+    <!-- Open Content -->
+    <section class="bg-light">
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-lg-5 mt-5">
+                    <div class="card mb-3">
+                        <img class="card-img img-fluid" src="" id="productImage" alt="Card image cap">
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="inputsubject">Motivo</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Motivo de Contacto">
-                </div>
-                <div class="mb-3">
-                    <label for="inputmessage">Mensaje</label>
-                    <textarea class="form-control mt-1" id="message" name="message" placeholder="Mensaje" rows="8"></textarea>
-                </div>
-                <div class="row">
-                    <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
+                <!-- col end -->
+                <div class="col-lg-7 mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="h2" id="productName"></h1>
+                            <p class="h3 py-2" id="productPrice"></p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <h6>Marca:</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <p class="text-muted" id="productBrand"></p>
+                                </li>
+                            </ul>
+
+                            <h6>Descripción:</h6>
+                            <p id="productDescription"></p>
+
+                        </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
-    <!-- End Contact -->
+    </section>
+    <!-- Close Content -->
+
+    <!-- Start Article -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-left p-2 pb-3">
+                <h4>Productos Relacionados</h4>
+            </div>
+
+            <!--Start Carousel Wrapper-->
+            <div id="carousel-related-product">
+
+                
+
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End Article -->
 
 
     <!-- Start Footer -->
@@ -235,43 +249,46 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+
+    <!-- Start Slider Script -->
+    <script src="assets/js/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- End Script -->
-     <script>
-        // prevent form submit
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            fetch('http://localhost:3000/formulario/enviarFormulario', {
-                method: 'POST',
+    <script>
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+
+        const id = params.id;
+        if(id) {
+            fetch(`http://localhost:3000/productos/buscarProductoPorId?id=${id}`, {
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: document.getElementById('name').value,
-                    subject: document.getElementById('subject').value,
-                    email: document.getElementById('email').value,
-                    message: document.getElementById('message').value
-                })
-            }).then(response => response.json()).then(data => {
-                if(data.error) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: data.error
+                }
+            })
+            .then(response => {
+                if(response.status === 200) {
+                    response.json().then(data => {
+                        document.querySelector('#productName').innerHTML = data.nombre;
+                        document.querySelector('#productDescription').innerHTML = `${data.descripcion}`;
+                        document.querySelector('#productPrice').innerHTML = `$${data.precio}`;
+                        document.querySelector('#productImage').src = `http://localhost:3000/productos/images/${data.imagen}`;
+                        document.querySelector('#productBrand').innerHTML = `<a href="productos.html?marca=${data.id_marca}" class="text-decoration-none">${data.marca}</a>`;
                     })
                 } else {
                     Swal.fire({
-                        icon: 'success',
-                        title: 'Gracias por contactarnos',
-                        text: 'Nos pondremos en contacto con usted lo antes posible'
+                        icon: 'error',
+                        title: 'No se pudo cargar el producto',
+                        text: 'No se pudo cargar el producto'
                     }).then(function () {
-                        document.location.href = 'index.html';
-                    })
+                        window.location.href = 'index.html';
+                    });
                 }
             })
-        });
-     </script>
+        }
+    </script>
     <script>
         // check if token exist in token
         const token = Cookies.get('token');
@@ -307,6 +324,76 @@
             })
         }
     </script>
+    <script>
+        const productName = document.querySelector('#productName').innerHTML.split(' ')[0];
+        const carousel = document.querySelector('#carousel-related-product');
+        fetch(`http://localhost:3000/productos/filtrarProductos?query=${productName}&limite=12`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+                if(response.ok) {
+                    response.json().then(data => {
+                        data.forEach(product => {
+                            carousel.insertAdjacentHTML('afterbegin', `
+                            <div class="p-2 pb-3">
+                                <div class="product-wap card rounded-0">
+                                    <div class="card rounded-0">
+                                        <img class="card-img rounded-0 img-fluid" src="http://localhost:3000/productos/images/${product.imagen}">
+                                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                            <ul class="list-unstyled">
+                                                <li><a class="btn btn-success text-white mt-2" href="verproducto.html?id=${product.id}"><i class="far fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="verproducto.html?id=${product.id}" class="h3 text-decoration-none">${product.nombre}</a>
+                                        <p class="text-start mb-0">$${product.precio}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            `);
+                        });
+
+                        $('#carousel-related-product').slick({
+                            infinite: true,
+                            arrows: false,
+                            slidesToShow: 4,
+                            slidesToScroll: 3,
+                            dots: true,
+                            responsive: [{
+                                    breakpoint: 1024,
+                                    settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 3
+                                    }
+                                },
+                                {
+                                    breakpoint: 600,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 3
+                                    }
+                                },
+                                {
+                                    breakpoint: 480,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 3
+                                    }
+                                }
+                            ]
+                        });
+                    });
+                } else {
+                    console.log('error');
+                }
+            })
+    </script>
+    <!-- End Slider Script -->
+
 </body>
 
 </html>
